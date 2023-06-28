@@ -1,0 +1,470 @@
+@font-face {
+    font-family: Montserrat;
+    src: url("/public/fonts/Montserrat-Regular.ttf");
+}
+@font-face {
+    font-family: MontserratBold;
+    src: url("/public/fonts/Montserrat-Bold.ttf");
+}
+@font-face {
+    font-family: PlayfairDisplay;
+    src: url("/public/fonts/PlayfairDisplay-Regular.ttf");
+}
+@keyframes move-background {
+    0% { background-position: 100% 0% }
+    100% { background-position: 0% 0% }
+  }
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+#main {
+    background-image: url("/public/img/main-background.png");
+    background-size: 1920px 100%;
+    background-position: center;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+#main-container {
+    padding-top: 42px;
+}
+
+.main-header {
+    display: flex;
+    align-items: center; 
+    justify-content: space-around;
+}
+
+.main-header__navbar {
+    margin: 0 64px 0 200px;
+}
+
+.main-header__navbar .navbar-item {
+    font-size: 16px;
+    color: #3868d2;
+    font-family: MontserratBold, sans-serif;
+    padding: 5px 10px;
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+.main-header__navbar .navbar-item:hover {
+    border-bottom: 2px solid #3868d2;
+}
+
+.main-header__logo span {
+    font-size: 18px;
+    font-family: Montserrat, sans-serif;
+    color: #3868d2;
+    margin-left: 10px;
+}
+
+.main-header__phone {
+    margin-right: 100px;
+}
+
+.main-header__phone span {
+    font-size: 20px;
+    font-family: MontserratBold, sans-serif;
+    color: #3868d2;
+    margin-left: 10px;
+}
+
+.main-header__phone span,
+.main-header__phone img {
+    vertical-align: middle;
+}
+
+.main-content {
+    margin-top: 181px;
+    max-width: 730px;
+}
+
+.main-title {
+    font-size: 40px;
+    color: #3868d2;
+    font-family: MontserratBold, sans-serif;
+    line-height: 45px;
+}
+
+.main-content__info {
+    margin-top: 36px;
+}
+
+.info-item {
+    margin-top: 17px;
+    padding-left: 11px;
+    margin-left: 11px;
+    font-size: 20px;
+    color: #3868d2;
+}
+
+.info-item::marker {
+    content: "\2714";
+}
+
+.standart-button {
+    background-color: #3868d2;
+    box-shadow: 3.536px 3.536px 20.01px 2.99px #28437f5c;
+    width: 324px;
+    border: none;
+    height: 58px;
+    font-size: 18px;
+    font-family: MontserratBold, sans-serif;
+    color: #ffffff;
+}
+
+.main-content__button {
+    margin-top: 54px;
+    margin-bottom: 250px;
+}
+
+.title {
+    font-size: 35px;
+    font-family: MontserratBold, sans-serif;
+    color: #3868d2;
+}
+
+.about {
+    margin-top: 160px;
+    margin-bottom: 126px;
+}
+
+#about1-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#about1-container .about-item {
+    margin-top: 40px;
+}
+
+#about-title {
+    margin-bottom: 60px;
+}
+
+#about1-container .about-item .about-text {
+    font-size: 16px;
+    color: #28437f;
+    line-height: 21px;
+    margin-top: 45px;
+    max-width: 560px;
+}
+
+#about1-container .about-item img {
+    box-shadow: 9px 9px 0 #ebf0fa;
+}
+
+#about-quote {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+}
+
+#title-quote {
+    font-size: 100px;
+    font-family: PlayfairDisplay, sans-serif;
+    color: #3868d2;
+
+}
+
+.services {
+    margin-bottom: 108px;
+}
+
+#services-title {
+    margin-bottom: 60px;
+}
+
+.service-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.service-items .service-item {
+    border: .1px black solid;
+    width: 282px;
+    height: 282px;
+    font-family: Montserrat, sans-serif;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 12px -12px 4px 0px rgba(0, 0, 0, 0.11);
+    border-radius: 25px;
+    /* transition: background-color .3s linear, animation .3s linear; */
+    
+}
+
+.service-items .service-item:hover {
+    background-size: 400%;
+    background-image: linear-gradient(135deg, rgba(255,255,255,1) 45%, rgba(208,218,221,1) 52%, rgba(255,255,255,1) 59%);
+    animation: move-background .5s 1 normal;
+}
+
+.service-items .service-item.closed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.service-items .service-item.opened {
+    display:  flex;
+    flex-direction: column;
+    padding: 5px 20px;
+}
+
+.service-items .service-item-description {
+    padding-top: 20px;
+    word-break: normal;
+    word-wrap: break-word;
+    font-size: 16px;
+}
+
+.service-items .service-item-price {
+    margin-top: auto;
+    margin-bottom: 5px;
+    align-self: flex-end;
+    font-size: 24px;
+}
+
+.service-items span {
+    color: #3868d2;
+    margin-right: 10px;
+}
+
+.service-items .service-item-text {
+    font-size: 18px;
+    color: #3868d2;
+    text-transform: uppercase;
+    font-family: MontserratBold, sans-serif;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#reserve {
+    background-image: url("/public/img/background2.png");
+    background-repeat: no-repeat;
+    background-size: 1920px 470px;
+    background-position: center;
+    padding: 132px 0;
+}
+
+#reserve-title {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.reserve-description {
+    font-size: 16px;
+    color: #28437f;
+    line-height: 21px;
+    text-align: center;
+    max-width: 530px;
+    margin: 0 auto;
+}
+
+#reserve-form {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#reserve-form input {
+    border: 1px solid #3868d2;
+    background-color: #ffffff;
+    width: 268px;
+    height: 48px;
+    padding: 20px;
+    margin-right: 10px;
+}
+
+#reserve-form button {
+    height: 48px;
+    border: 1px solid #3868d2;
+}
+
+#doctors {
+    margin-top: 122px;
+    margin-bottom: 118px;
+}
+
+#doctors-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.doctors-images {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer {
+    background-color: #28437f;
+    color: #ffffff;
+}
+
+#footer-container {
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__logo span,
+.footer__phone span{
+    margin-left: 10px;
+}
+
+.footer-info {
+    display: flex;
+}
+
+.footer-text {
+    margin-left: 9px;
+}
+
+#calculator {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+#calculator-area {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin: 0 auto;
+    border: 2px black solid;
+    border-radius: 20px;
+}
+
+#calculator-area-upper {
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: 53% 45%;
+    justify-content: space-between;
+    border-bottom: 2px black solid;
+}
+
+#calculator-area-service-selected,
+#calculator-area-service-list {
+    padding: 10px 0;
+}
+
+.calculator-area-title {
+    color: #3868d2;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-family: MontserratBold, sans-serif;
+    text-align: center;
+}
+
+#calculator-area-list,
+#calculator-area-selected {
+    height: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.area-list-category {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
+
+.area-list-category .area-list-name{
+    font-size: 18px;
+    cursor: pointer;
+    font-family: MonserratBold, sans-serif;
+}
+
+.area-list-service {
+    padding: 2px 10px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.area-list-service:hover {
+    color: #3868d2;
+    cursor: pointer;
+}
+
+.area-list-service-name {
+    font-size: 16px;
+    max-width: 80%;
+    text-align: justify;
+    word-wrap: break-word;
+    line-height: 23px;
+    transition: color .2s linear;
+}
+
+.area-list-service-name::before {
+    content: "\23FA";
+    margin-right: 3px;
+}
+
+.area-list-serivice-price {
+    margin-left: 10px;
+}
+
+.area-list-category span {
+    margin-left: 10px;
+}
+
+.area-selected-item {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+}
+
+.selected-item-name {
+    font-size: 18px;
+    word-break: break-all;
+    word-wrap: break-word;
+    max-width: 80%;
+}
+
+.selected-item-button {
+    width: 40px;
+    height: 18px;
+    margin-top: auto;
+}
+
+#calculator-area-lower {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+}
+
+#calculator-area-lower-button{
+   width: 180px;
+   height: 40px;
+   font-size: 16px;
+   cursor: pointer;
+}
+
+#calculator-area-lower-price {
+    font-size: 24px;
+}
+
+#calculator-area-lower-price span {
+    font-weight: bold;
+    color: #3868d2;
+}
